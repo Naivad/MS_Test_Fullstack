@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS_Test_Fullstack.Domain", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS_Test_Fullstack.Infrastructure", "MS_Test_Fullstack.Infrastructure\MS_Test_Fullstack.Infrastructure.csproj", "{7C4672FA-2FA7-4E50-A758-A00E60493E54}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Test", "4-Test", "{F433C781-F336-49C7-8670-3F11140434FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS_Test_Fullstack.Test", "MS_Test_Fullstack.Test\MS_Test_Fullstack.Test.csproj", "{0D113909-3C03-43FA-A8A4-8470AF7C1929}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{7C4672FA-2FA7-4E50-A758-A00E60493E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C4672FA-2FA7-4E50-A758-A00E60493E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C4672FA-2FA7-4E50-A758-A00E60493E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D113909-3C03-43FA-A8A4-8470AF7C1929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D113909-3C03-43FA-A8A4-8470AF7C1929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D113909-3C03-43FA-A8A4-8470AF7C1929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D113909-3C03-43FA-A8A4-8470AF7C1929}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{F4224ED9-1847-48A1-8851-6580A37A6640} = {11451CFB-D114-4BFC-971C-EF49F84B2E44}
 		{69416547-7E56-4DC9-9132-98FFDA3775CB} = {D86395F8-36AB-4B52-A1A8-6B6DF4FEC753}
 		{7C4672FA-2FA7-4E50-A758-A00E60493E54} = {9550D313-DDCE-4F4D-B31A-FABA3D9CAE7D}
+		{0D113909-3C03-43FA-A8A4-8470AF7C1929} = {F433C781-F336-49C7-8670-3F11140434FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5752481E-8892-4975-81F0-2A2BAEB3CC5A}
