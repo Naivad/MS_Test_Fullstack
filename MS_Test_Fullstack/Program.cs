@@ -1,13 +1,31 @@
-using Microsoft.Azure.Functions.Worker.Builder;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MS_Test_Fullstack.Domain.Interfaces;
+using MS_Test_Fullstack.Domain.IReposotories;
+using MS_Test_Fullstack.Infrastructure;
+using MS_Test_Fullstack.Infrastructure.Repositories;
+using MS_Test_Fullstack.Services;
+using System.Data;
+using System.Data.SqlClient;
 
-var builder = FunctionsApplication.CreateBuilder(args);
 
-builder.ConfigureFunctionsWebApplication();
+var host = new HostBuilder()
+    .ConfigureFunctionsWebApplication()
+    .ConfigureServices((context, services) =>
+    {
+       
 
-// Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
-// builder.Services
-//     .AddApplicationInsightsTelemetryWorkerService()
-//     .ConfigureFunctionsApplicationInsights();
+        services.AddApplicationInsightsTelemetryWorkerService();
+        services.ConfigureFunctionsApplicationInsights();
+        services.AddScoped<IDataAccessRepository, GenericRepository>();
+        services.AddScoped<IFlightsRepository, FlightsRepository>();
+        services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
-builder.Build().Run();
+        services.AddScoped<IFlightsServices, FlightsServices>();
+
+    })
+    .Build();
+
+host.Run();

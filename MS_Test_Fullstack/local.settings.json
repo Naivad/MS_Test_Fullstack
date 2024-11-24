@@ -1,7 +1,11 @@
 {
-    "IsEncrypted": false,
-    "Values": {
-        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-        "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated"
-    }
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "create_Flights": "InsertFlightFromJson"
+  },
+  "ConnectionStrings": {
+    "dbConnection": "Data Source=.\\SQLEXPRESS;Initial Catalog=DcxAir;User ID=sa;Password=Consola01.;MultipleActiveResultSets=True;Application Name=DcxAir"
+  }
 }
