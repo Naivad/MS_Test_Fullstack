@@ -2,6 +2,7 @@
 using MS_Test_Fullstack.Domain.Interfaces;
 using MS_Test_Fullstack.Domain.IReposotories;
 using MS_Test_Fullstack.Domain.Models;
+using MS_Test_Fullstack.Helpers;
 using Newtonsoft.Json;
 
 namespace MS_Test_Fullstack.Services
@@ -47,6 +48,7 @@ namespace MS_Test_Fullstack.Services
 
             try
             {
+                CleanFiels cleanFiels = new();
                 // Deserializar filtros de la consulta
                 DateTime? startDate = Convert.ToDateTime(req.Query["startDate"]!);
                 DateTime? endDate = null;
@@ -54,8 +56,8 @@ namespace MS_Test_Fullstack.Services
                 {
                     endDate = DateTime.TryParse(req.Query["EdnDate"], out DateTime parsedDate) ? parsedDate : null;
                 }
-                string? iataCodeOrigin = req.Query["iataCodeOrigin"]!;
-                string? iataCodeDestination = req.Query["iataCodeDestination"]!;
+                string? iataCodeOrigin = cleanFiels.SanitizeInput(req.Query["iataCodeOrigin"]!);
+                string? iataCodeDestination = cleanFiels.SanitizeInput(req.Query["iataCodeDestination"]!);
                 string? currency = req.Query["currency"]!;
 
                 // Configurar filtros iniciales
