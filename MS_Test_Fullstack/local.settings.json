@@ -4,7 +4,8 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
     "create_Flights": "InsertFlightFromJson",
-    "get_Flights": "GetFlightsByDateAndRoute"
+    "get_Flights": "GetFlightsByDateAndRoute",
+    "get_Airports": "GetAirports"
   },
   "ConnectionStrings": {
     "dbConnection": "Data Source=.\\SQLEXPRESS;Initial Catalog=DcxAir;User ID=sa;Password=Consola01.;MultipleActiveResultSets=True;Application Name=DcxAir"

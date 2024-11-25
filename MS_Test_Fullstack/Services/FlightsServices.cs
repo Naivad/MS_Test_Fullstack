@@ -56,13 +56,15 @@ namespace MS_Test_Fullstack.Services
                 }
                 string? iataCodeOrigin = req.Query["iataCodeOrigin"]!;
                 string? iataCodeDestination = req.Query["iataCodeDestination"]!;
+                string? currency = req.Query["currency"]!;
 
                 // Configurar filtros iniciales
                 FilterFlights filterFlights = new()
                 {
                     FilterDate = startDate,
                     IATACodeOrigin = iataCodeOrigin,
-                    IATACodeDestination = iataCodeDestination
+                    IATACodeDestination = iataCodeDestination,
+                    Currency = currency
                 };
 
                 // Obtener vuelos de ida
@@ -75,6 +77,7 @@ namespace MS_Test_Fullstack.Services
                     filterFlights.FilterDate = endDate;
                     filterFlights.IATACodeOrigin = iataCodeDestination;
                     filterFlights.IATACodeDestination = iataCodeOrigin;
+                    filterFlights.Currency = currency;
 
                     var returnFlights = await _flightsRepository.GetFlights(filterFlights);
                     ProcessFlights(returnFlights, flightsData, "Return");

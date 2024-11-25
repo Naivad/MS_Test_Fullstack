@@ -11,6 +11,7 @@ namespace MS_Test_Fullstack.Domain.Models
         public DateTime? FilterDate { get; set; }
         public string? IATACodeOrigin { get; set; }
         public string? IATACodeDestination { get; set; }
+        public string? Currency { get; set; }
 
     }
 }

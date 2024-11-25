@@ -19,8 +19,10 @@ var host = new HostBuilder()
         services.AddScoped<IDataAccessRepository, GenericRepository>();
         services.AddScoped<IFlightsRepository, FlightsRepository>();
         services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
+        services.AddScoped<IAirportsRepository, AirportsRepository>();
 
         services.AddScoped<IFlightsServices, FlightsServices>();
+        services.AddScoped<IManagerAirports, ManagerAirportsService>();
 
     })
     .Build();
