@@ -49,7 +49,11 @@ namespace MS_Test_Fullstack.Services
             {
                 // Deserializar filtros de la consulta
                 DateTime? startDate = Convert.ToDateTime(req.Query["startDate"]!);
-                DateTime? endDate = Convert.ToDateTime(req.Query["EdnDate"]!);
+                DateTime? endDate = null;
+                if (!string.IsNullOrEmpty(req.Query["EdnDate"]))
+                {
+                    endDate = DateTime.TryParse(req.Query["EdnDate"], out DateTime parsedDate) ? parsedDate : null;
+                }
                 string? iataCodeOrigin = req.Query["iataCodeOrigin"]!;
                 string? iataCodeDestination = req.Query["iataCodeDestination"]!;
 
