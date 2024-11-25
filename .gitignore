@@ -277,3 +277,6 @@ __pycache__/
 /AF-Allianz-DynamicFormChat/Properties/ServiceDependencies/fn-ms-allianz-dynamic-formchat-dev-v1 - Web Deploy/storage1.arm.json
 /AF-Allianz-DynamicFormChat/Properties/ServiceDependencies/fn-ms-allianz-dynamic-formchat-dev-v1 - Web Deploy1/profile.arm.json
 /.VSCodeCounter
+/MS_Test_Fullstack/Properties/PublishProfiles
+/MS_Test_Fullstack/Properties/ServiceDependencies/MS-Test-Fullstack-dev-v1 - Web Deploy
+/MS_Test_Fullstack/Properties/ServiceDependencies/MS-Test-Fullstack-dev-v1 - Zip Deploy/profile.arm.json
