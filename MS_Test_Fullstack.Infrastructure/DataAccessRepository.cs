@@ -17,19 +17,19 @@ namespace MS_Test_Fullstack.Infrastructure
         internal async Task<TOutput> ExecFirst<TInput, TOutput>(string spName, TInput inputObject, CommandType command) where TInput : class
         {
 
-            // Crear una nueva conexión
+
             using IDbConnection conn = _connectionFactory.CreateConnection();
 
-            // Asegurarse de que la conexión esté abierta
+    
             if (conn.State != ConnectionState.Open)
             {
                  conn.Open();
             }
 
-            // Serializar el inputObject a JSON (si es necesario)
+
             var json = JsonConvert.SerializeObject(inputObject, Formatting.None);
 
-            // Ejecutar el comando y devolver el primer resultado
+ 
             var result = await conn.QueryFirstOrDefaultAsync<TOutput>(spName,
                 inputObject == null ? null : new { json },
                 commandType: command);
@@ -40,10 +40,10 @@ namespace MS_Test_Fullstack.Infrastructure
         internal async Task<IEnumerable<TOutput>> Exec<TInput, TOutput>(string spName, TInput inputObject, CommandType command) where TInput : class
         {
 
-            // Crear una nueva conexión
+
             using IDbConnection conn = _connectionFactory.CreateConnection();
 
-            // Asegurarse de que la conexión esté abierta
+
             if (conn.State != ConnectionState.Open)
             {
                 conn.Open();

@@ -10,5 +10,6 @@ namespace MS_Test_Fullstack.Domain.IReposotories
     public interface IFlightsRepository
     {
         Task<ResultFlights> Create(Flights flights);
+        Task<IEnumerable<AvailableFlights>> GetFlights(FilterFlights filterFlights);
     }
 }

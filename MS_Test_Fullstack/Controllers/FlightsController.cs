@@ -17,13 +17,23 @@ namespace MS_Test_Fullstack.Controllers
             _logger = logger;
             _flightsServices = flightsServices;
         }
-
+        
         [Function("CreateFlights")]
         public async Task<IActionResult> Create([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request CreateFlights.");
 
             var res = await _flightsServices.CreateFlights(req);
+
+            return res.IsSuccess ? new OkObjectResult(res) : new BadRequestObjectResult(res);
+        }
+
+        [Function("CheckFlights")]
+        public async Task<IActionResult> GetFlights([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req)
+        {
+            _logger.LogInformation("C# HTTP trigger function processed a request CreateFlights.");
+
+            var res = await _flightsServices.GetFlights(req);
 
             return res.IsSuccess ? new OkObjectResult(res) : new BadRequestObjectResult(res);
         }

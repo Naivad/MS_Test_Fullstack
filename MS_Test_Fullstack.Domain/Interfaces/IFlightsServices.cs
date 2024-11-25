@@ -6,5 +6,6 @@ namespace MS_Test_Fullstack.Domain.Interfaces
     public interface IFlightsServices
     {
         Task<Result<List<ResultFlights>>> CreateFlights(HttpRequest req);
+        Task<Result<List<AvailableFlights>>> GetFlights(HttpRequest req);
     }
 }

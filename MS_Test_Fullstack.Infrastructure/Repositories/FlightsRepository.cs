@@ -26,5 +26,11 @@ namespace MS_Test_Fullstack.Infrastructure.Repositories
         {
            return await _dataAccessRepository.ExecuteFirst<ResultFlights>(_configuration["create_Flights"]!, flights, CommandType.StoredProcedure);
         }
+        
+
+        public async Task<IEnumerable<AvailableFlights>> GetFlights(FilterFlights filterFlights)
+        {
+            return await _dataAccessRepository.Execute<AvailableFlights>(_configuration["get_Flights"]!, filterFlights, CommandType.StoredProcedure);
+        }
     }
 }
